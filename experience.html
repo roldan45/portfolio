@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Experience</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .experience-container {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+    
+            h2 {
+                color: rgb(0, 201, 177);
+                font-size: xx-large;
+            }
+    
+            .experience-item {
+                margin: 20px 0;
+                
+                
+            }
+    
+            .experience-title {
+                font-weight: bold;
+                color: white;
+                font-size:x-large;
+            }
+    
+            .experience-details {
+                margin-top: 10px;
+                color: rgb(143, 143, 143);
+                max-width: 22cm;
+            }
+            #dswd {
+                height: 3in;
+                width: auto;
+                float: right;
+                border-radius: 20px            
+            }
+            #jpl {
+                height: 3in;
+                width: auto;
+                float: right;
+                margin-bottom: 10px;
+                border-radius: 20px;
+            }
+            button {margin-bottom: 2cm;
+                    margin-top: 1cm;}
+            
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <a href="index.html"><img src="jamisola.jpg" id="logo"></a>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main class="experience-container">
+            <h2>My Work Experience</h2>
+    
+            <div class="experience-item">
+                <h3 class="experience-title">Lathe Machine Operator</h3>
+                
+                <video id="jpl" controls>
+                    <source src="vid/mech.mp4"  type="video/mp4"><br>  
+                </video>
+                
+                <div class="experience-details">
+                    <p>JP Lozada Engineering</p>
+                    <p>July 2020 - August 2023</p>
+                    <p>Responsibilities included operating and maintaining lathe machines, ensuring precision in metalwork.</p>
+                    <p>Responsible for creating and modifying electrical diagram layouts for various projects.</p>
+                </div><br>
+                
+                <button onclick="playNextVideo()">Next</button><br>
+                
+            </div>
+    
+            <div class="experience-item">
+                <h3 class="experience-title">Data Encoder</h3>
+                <img id="dswd" src="img/dswd.jpeg" >
+                <div class="experience-details">
+                    <p>DSWD (OJT)</p>
+                    <p>October 2022 - December 2022</p>
+                    <p>Encoding data gathered from the beneficiaries.</p>
+                    <p>Gathering details and information from beneficiaries of DSWD unconditional cash assistance.</p>
+                </div><br>
+                <button onclick="playNextImage()">Next</button>
+            </div>
+
+    
+        </main>
+        <script>
+        const videos = [
+            { id: "jpl", src: "vid/mech.mp4" },
+            { id: "jpl", src: "vid/mech_2.mp4" },
+            { id: "jpl", src: "vid/mech_3.mp4" },
+            { id: "jpl", src: "vid/mech_4.mp4" },
+            { id: "jpl", src: "vid/mech_5.mp4" },
+            { id: "jpl", src: "vid/mech_6.mp4" },
+            { id: "jpl", src: "vid/id.mp4" },
+            { id: "jpl", src: "vid/id_2.mp4" },
+            { id: "jpl", src: "vid/elec.mp4" },
+            { id: "jpl", src: "vid/elec_2.mp4" },
+            { id: "jpl", src: "vid/elec_3.mp4" },
+            { id: "jpl", src: "vid/elec_4.mp4" },
+            { id: "jpl", src: "vid/elec_5.mp4" },
+        ];
+
+        let currentVideo = 0;
+
+        function changeVideo(index) {
+            const video = document.getElementById(videos[index].id);
+            video.src = videos[index].src;
+            video.load();
+            video.play();
+
+            currentVideo = index;
+        }
+
+        function playNextVideo() {
+            currentVideo = (currentVideo + 1) % videos.length;
+            changeVideo(currentVideo);
+        }
+
+        // Initialize by playing the first video
+        changeVideo(0);
+    </script>
+
+<script>
+    const images = [
+        { id: "dswd", src: "img/dswd.jpeg" },
+        { id: "dswd", src: "img/dswd_2.jpg" },
+        { id: "dswd", src: "img/dswd_3.jpg" },
+        { id: "dswd", src: "img/dswd_4.jpeg" },
+    ];
+
+    let currentImage = 0;
+
+function changeImage(index) {
+    const imgElement = document.getElementById(images[index].id);
+    imgElement.src = images[index].src;
+}
+
+function playNextImage() {
+    currentImage = (currentImage + 1) % images.length;
+    changeImage(currentImage);
+}
+
+// Initialize with the first image
+changeImage(0);
+</script>
+
+    </body>
+    </html>
+    
