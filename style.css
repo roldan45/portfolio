@@ -1,0 +1,362 @@
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: rgb(212, 212, 212);
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(34, 67, 130);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+  transition: all 0.5s ease;
+}
+
+body {
+  background: linear-gradient(to bottom, rgb(0, 34, 70), rgb(0, 4, 9));
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+h2 {
+  color: rgb(0, 201, 177);
+  font-size: xx-large;
+}
+
+h3 {
+  color: rgb(0, 201, 177);
+}
+
+.me {
+  color: rgb(232, 232, 232);
+  font-size: xx-large;
+}
+
+#role {
+  color: rgb(143, 143, 143);
+}
+
+p {
+  color: rgb(143, 143, 143);
+  padding-right: 3in;
+}
+
+#logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+#logo:hover {
+  transform: scale(1.5) translateY(3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  transition: all 0.5s ease;
+}
+.gitna {
+  padding-left: 3cm;
+}
+
+button {
+  border-style: solid;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(0, 201, 177);
+  border-style: solid;
+  border-color: rgb(0, 201, 177);
+  background-color: transparent;
+  height: 60px;
+  width: 5cm;
+  border-radius: 1cm;
+
+}
+
+button:hover {
+  background-color: rgb(105, 255, 205);
+  color: rgb(0, 0, 0);
+  transition: all 0.5s ease;
+  transform: scale(1.1);
+}
+
+/* ______________about__________________ */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  min-height: 15in;
+}
+
+.about-content p {
+  color: rgb(143, 143, 143);
+  text-align: center;
+  max-width: 800px;
+  padding: 10px;
+}
+#about-img {width: 5in;
+  border-radius: 10%;
+}
+
+/* ______________experience__________________ */
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.experience-item {
+  margin: 20px 0;
+}
+
+.experience-title {
+  font-weight: bold;
+  color: white;
+  font-size: x-large;
+}
+
+.experience-details {
+  margin-top: 10px;
+  color: rgb(143, 143, 143);
+  max-width: 22cm;
+}
+
+#dswd, #jpl, #mec {
+  height: 3in;
+  width: auto;
+  float: right;
+  margin-bottom: 10px;
+  border-radius: 20px
+}
+
+#expirience-button {
+  margin-bottom: 2cm;
+  margin-top: 1cm;
+}
+
+/* ______________project__________________ */
+
+.work-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.work-item {
+  margin: 20px 0;
+}
+
+.work-title {
+  font-weight: bold;
+  color: white;
+  font-size:x-large;
+}
+
+.work-details {
+  margin-top: 10px;
+  color: rgb(143, 143, 143);
+}
+
+.work-details p{
+  width: 355px;
+}
+
+#mec {
+      height: 3in;
+      width: auto;
+      margin-bottom: 10px;
+      border-radius: 20px;
+  }
+
+#project-button {
+  margin-bottom: 2cm;
+  margin-top: 1cm;
+  }
+
+/* ______________contact__________________ */
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.contact-info {
+  margin: 20px 0;
+}
+.contact-title {
+  font-weight: bold;
+  color: white;
+  font-size:x-large;
+}
+.contact-details {
+  margin-top: 10px;
+  color: rgb(143, 143, 143);
+}
+
+/* ______________resume__________________ */
+.resume-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 20in;
+}
+.resume-item {
+  margin: 30px;
+  height: 400px;
+}
+.resume-title {
+  font-weight: bold;
+  color: white;
+  font-size:x-large;
+}
+.resume-details {
+  margin-top: 10px;
+  color: rgb(143, 143, 143);
+  max-width: 22cm;
+}
+#educ {
+  height: 3in;
+  width: auto;
+  float: right;
+  margin-bottom: 5px;
+  border-radius: 20px;
+}
+#thes, #cert {
+  height: 4in;
+  width: auto;
+  float: right;
+  margin-bottom: 5px;
+  border-radius: 20px;
+}
+strong {font-size: larger;
+  color: rgb(2, 163, 2);
+  margin-right: 10px;
+}
+#resume-button {margin-top: 86px;
+}
+
+@media (max-width: 800px) {
+  #logo {
+    height: 30px;
+    width: 30px;
+    margin: 1px;
+  }
+
+  ul {
+    padding: 0px;
+  }
+
+  li {
+    width: 55px;
+  }
+
+  li a {
+    padding: 5px;
+    font-size: 11px;
+  }
+
+  body {
+    height: auto;
+
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .me {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 12px;
+    padding: 0px;
+  }
+
+  button {
+    height: 30px;
+    width: 3cm;
+  }
+
+  .gitna {
+    text-align: center;
+    margin-top: 100px;
+    padding: 0px;
+  }
+
+  /* ______________about__________________ */
+  #about-img {
+      width: 3in;
+  }
+  .about-container{
+      height: 16in;
+  }
+
+  /* ______________expirience__________________ */
+  .experience-container {
+      max-width: 300px;
+      padding: 20px;
+      height: 28in;
+  }
+  .experience-item {
+      max-width: 300px;
+      text-align: center;
+  }
+  .experience-details {
+      margin-top: 0px;
+      min-width: 300px;
+  }
+  #mec, #jpl, #dswd{
+      height: auto;
+      width: 300px;
+      float: none;
+  }
+  #expirience-button {
+      margin-bottom: 20px;
+      margin-top: 0px;
+  }
+
+  /* ______________project__________________ */
+
+  .work-container {
+    text-align: center;
+  }
+  #project-button {margin-top: 0px;}
+
+  /* ______________resume__________________ */
+  .resume-container{
+    text-align: center;
+    height: 24in;
+  }
+  .resume-details{
+      padding: 10px;
+      margin-top: 5px;
+  }
+  .resume-details p{
+      text-align: left;
+  }
+  .resume-item {
+      margin: 10px;
+      height: auto;
+  }
+  #educ, #thes, #cert {
+    height: auto;
+    width: 300px;
+    float: none;
+  }
+
+  #resume-button {
+      margin: 0px;
+  }
+
+}
