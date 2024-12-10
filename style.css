@@ -149,6 +149,7 @@ button:hover {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
+  min-height: 9in;
 }
 
 .work-item {
@@ -187,6 +188,7 @@ button:hover {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  min-height: 9in;
 }
 .contact-info {
   margin: 20px 0;
