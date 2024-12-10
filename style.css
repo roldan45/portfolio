@@ -24,7 +24,7 @@ li a:hover {
 }
 
 body {
-/*   background: linear-gradient(to bottom, rgb(0, 34, 70), rgb(0, 4, 9)); */
+  background: linear-gradient(to bottom, rgb(0, 34, 70), rgb(0, 4, 9));
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
