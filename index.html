@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Harold Jamisola</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 12%;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #0F0F0F, #004d00);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            background: rgba(34, 34, 34, 0.8);
+            backdrop-filter: blur(2px);
+            padding: 15px 0;
+        }
+
+        .navbar-brand img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px rgba(93, 214, 44, 0.6);
+            transition: 0.3s;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.2);
+            box-shadow: 0px 0px 15px #8EFF57;
+        }
+
+        .navbar li a {
+            color: #5DD62C;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .navbar li a:hover {
+            color: black;
+            background: #8EFF57;
+            transform: scale(1.1);
+        }
+
+        .navbar-toggler {
+            border: 2px solid #5DD62C;
+            padding: 5px 8px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .navbar-toggler:hover {
+            background: #8EFF57;
+            border-color: #8EFF57;
+            transform: scale(1.1);
+        }
+
+        .home-page {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .about-page {
+            height: 140vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .contain-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .contain-box:hover {
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.2);
+            transform: scale(1.01);
+        }
+
+        #pogi {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #5DD62C;
+            margin-bottom: 15px;
+        }
+
+        #gradpic {
+            width: 400px;
+            height: 550px;
+            object-fit: cover;
+            border: 4px solid #5DD62C;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .contain-box h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .btn-custom {
+            background-color: #5DD62C;
+            color: black;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: 0.3s;
+            margin: 10px;
+        }
+
+        .btn-custom:hover {
+            background-color: #8EFF57;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        section {
+            display: none;
+        }
+
+        #home {
+            display: block;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            aspect-ratio: 16/9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: black;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        #unread {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('home')">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('resume')">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('contact')">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('projects')">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('experience')">Experience</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('about')">About</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="container home-page">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="contain-box">
+                    <img src="logo.jpg" alt="Profile Picture" id="pogi">
+                    <h1>Hi, I'm Harold Delima Jamisola</h1>
+                    <p><strong>Junior Python Developer</strong></p>
+                    <p>I've experienced developing and customizing **Odoo 14 applications** to streamline business
+                        processes and improve productivity.
+                        With hands-on experience in **Python and Odoo Developmen**, I build scalable and efficient
+                        solutions.
+                        I am passionate about automation, ERP systems, and data-driven applications.</p>
+                    <a href="#" onclick="showPage('experience')" class="btn btn-custom">View My Work</a><br>
+                    <a href="resume.pdf" download class="btn btn-outline-light">📄 Download My Resume</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="container my-5">
+        <h2 class="text-center mb-4">Resume & Portfolio</h2>
+
+        <!-- School -->
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>🏫🎓 Education</h4><br>
+                    <h5>Bachelor of Science in Computer Science</h5>
+                    <h5>AMA CLC - College of Sta. Maria</h5>
+                    <p><em>2018 - 2023</em></p>
+                    <ul>
+                        <li>Developed a strong foundation in software development, algorithms, and system design.</li>
+                        <li>Gained hands-on experience in building web applications and solving problems using code.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <h4>👀 View</h4>
+                    <div id="school" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#school" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#school" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#school" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#school" data-bs-slide-to="3"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/amalogo.jpg" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Ama Logo</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <img src="img/school/aclc.jpg" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Aclc logo</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <img src="img/school/build.jpg" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>ACLC Building</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <img src="img/school/gradu.jpg" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Graduation day</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#school"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#school"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thesis -->
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>📌 Thesis</h4><br>
+                    <h5>Career Course Recommendation System</h5>
+                    <ul>
+                        <li>Our career guidance system, which operates on a network is designed to help you make career
+                            choices. Powered by the RIASSEC algorithm it offers recommendations based on your
+                            personality type (Realistic, Investigative, Artistic, Social, Enterprising and
+                            Conventional). With a focus, on data security and efficiency this system provides tailored
+                            solutions to help you navigate your career path strategically.</li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <h4>👀 View</h4>
+                    <div id="thesis" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#thesis" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#thesis" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#thesis" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#thesis" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#thesis" data-bs-slide-to="4"></button>
+                            <button type="button" data-bs-target="#thesis" data-bs-slide-to="5"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/home.png" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Home Page</h5>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/skill.png" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Dashboard</h5>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/skill_2.png" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Table</h5>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/skill_3.png" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Course Table</h5>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/skill_4.png" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Result Table</h5>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/login.png" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Login Page</h5>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#thesis"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#thesis"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificate -->
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>🏅 Certificate</h4><br>
+                    <h5>Robotic Process Automation (RPA) 2019</h5>
+                    <ul>
+                        <li>This certification validates successful completion of the Robotic Process Automation course
+                            in 2019, showcasing knowledge and proficiency in this field.</li>
+                    </ul>
+                    <h5>Certificate for Achivement</h5>
+                    <ul>
+                        <li>This certificate highlights an exceptional accomplishment in a specific field. It
+                            demonstrates excellence and skill in a particular aspect of my career.</li>
+                    </ul>
+
+                </div>
+                <div class="col-md-7">
+                    <h4>👀 View</h4>
+                    <div id="certificate" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#certificate" data-bs-slide-to="0"
+                                class="active"></button>
+                            <button type="button" data-bs-target="#certificate" data-bs-slide-to="1"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/cert.jpg" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Robotic Process Automation (RPA)</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/school/cert_2.jpg" class="d-block w-100 fixed-image">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#certificate"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#certificate"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>👩🏻‍💻🧠✍🏻⚙️💡 Skills</h4><br>
+                    <h5>Programming Languages & Web Technologies</h5>
+                    <ul>
+                        <li>HTML/CSS, PHP, JavaScript, MySQL, Python, PostgreSQL</li>
+                    </ul>
+                    <h5>Development Tools & Platforms</h5>
+                    <ul>
+                        <li>Visual Basic, Visual Studio Code, Odoo 14 ERP</li>
+                    </ul>
+                    <h5>Productivity & Creative Tools</h5>
+                    <ul>
+                        <li>Microsoft Office (MS Word, Excel, Powerpoint), Adobe Creative Suite (Photoshop, Premier)
+                        </li>
+                    </ul>
+                    <h5>Mechanical & Technical Skills</h5>
+                    <ul>
+                        <li>Lathe Machine Operator, Milling Machine Operator, Drilling Machine Operator, Shaper Machine
+                            Operator, Crane Operator, Forklift Operator</li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <h4>👀 View</h4>
+                    <div id="skills" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#skills" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#skills" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#skills" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#skills" data-bs-slide-to="3"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/skills/Coding Logo.png" class="d-block w-100 fixed-image">
+                                </div>
+
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <img src="img/skills/Code Software Logo.png" class="d-block w-100 fixed-image">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <img src="img/skills/Computer Skills Logo.png" class="d-block w-100 fixed-image">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <img src="img/skills/Mechanical Logo.png" class="d-block w-100 fixed-image">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#skills"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#skills"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="experience" class="container my-5">
+        <h2 class="text-center mb-4">Experience & Skills</h2>
+        <!-- Developer -->
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>👨🏻‍💻 Junior Python Developer (Trainee)</h4><br>
+                    <h5>Millennium Erectors Corporation</h5>
+                    <p><em>January 2024 - June 2024</em></p>
+                    <ul>
+                        <li>Developed custom applications within the Odoo 14 framework.</li>
+                        <li>Collaborated with clients to gather requirements and deliver tailored solutions.</li>
+                        <li>Worked on full-cycle project development: design, coding, testing, and deployment.</li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <h4>🛠 Skills & Projects</h4>
+                    <div id="developer" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#developer" data-bs-slide-to="0"
+                                class="active"></button>
+                            <button type="button" data-bs-target="#developer" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#developer" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#developer" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#developer" data-bs-slide-to="4"></button>
+                            <button type="button" data-bs-target="#developer" data-bs-slide-to="5"></button>
+                            <button type="button" data-bs-target="#developer" data-bs-slide-to="6"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/mec_1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Company ID System</h5>
+                                    <p>Temporary ID validation</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/mec_2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Company ID System</h5>
+                                    <p>Automated ID generation and validation</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/dtr1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Odoo 14 Menu Dashboard</h5>
+                                    <p>Employee, DTR Process and HR Forms</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/dtr2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Employee Dashboard</h5>
+                                    <p>List and Record of Employee</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/dtr3.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>DTR Process Dashboard</h5>
+                                    <p>Summary Attendance Record per payroll</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/dtr4.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Payroll Record View</h5>
+                                    <p>Recorded Payroll base on Department</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/dtr5.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>DTR Summary</h5>
+                                    <p>Summarizing Attendance per Employee</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#developer"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#developer"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Machine Operator -->
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>⚙️ Lathe Machine Operator (Working Student)</h4><br>
+                    <h5>JP Lozada Engineering</h5>
+                    <p><em>July 2020 - August 2023</em></p>
+                    <ul>
+                        <li>Responsibilities included operating and maintaining lathe machines, ensuring precision in
+                            metalwork.</li>
+                        <li>Responsible for creating and modifying electrical diagram layouts for various projects.</li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <h4>🛠 Skills & Projects</h4>
+                    <div id="machine" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="0"
+                                class="active"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="4"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="5"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="6"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="7"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="8"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="9"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="10"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="11"></button>
+                            <button type="button" data-bs-target="#machine" data-bs-slide-to="12"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/mech.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Machine Parts</h5>
+                                    <p>Creating Gears</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/mech_2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Machine Parts</h5>
+                                    <p>Creating Shafting</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/mech_3.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Machine Parts</h5>
+                                    <p>Creating Shafting</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/mech_4.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Universal Robina Corporation (URC)</h5>
+                                    <p>Sugar and Renewables</p>
+                                    <p>Brgy. Caloocan, Balayan, Batangas</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/mech_5.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Universal Robina Corporation (URC)</h5>
+                                    <p>Brgy. Caloocan, Balayan, Batangas</p>
+                                    <p>Delivering and repairing Big Machineries</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/mech_6.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5>Universal Robina Corporation (URC)</h5>
+                                    <p>Brgy. Caloocan, Balayan, Batangas</p>
+                                    <p>Delivering and repairing Big Machineries</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/id.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <p>Company ID</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/id_2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <p>Generated ID in Universal Robina Corporation (URC)</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/elec.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Handmade Electrical Layout</h5>
+                                    <p>Layout for URC Batangas Machine</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/elec_2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Generating Digital Electrical Layout</h5>
+                                    <p>Layout for URC Batangas Machine</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/elec_3.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Handmade Electrical Layout</h5>
+                                    <p>Layout for URC Batangas Machine</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/elec_4.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Generating Digital Electrical Layout</h5>
+                                    <p>Layout for URC Batangas Machine</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <video controls class="d-block w-100 fixed-video">
+                                        <source src="vid/elec_5.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h5 id="unread">Generating Digital Electrical Layout</h5>
+                                    <p>Layout for URC Batangas Machine</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#machine"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#machine"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data encoder -->
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>🖥️ Data Encoder (OJT)</h4><br>
+                    <h5>Department of Social Welfare and Development (DSWD)</h5>
+                    <p><em>October 2022 - December 2022</em></p>
+                    <ul>
+                        <li>Encoding data gathered from the beneficiaries.</li>
+                        <li>Gathering details and information from beneficiaries of DSWD unconditional cash assistance.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <h4>🛠 Skills & Projects</h4>
+                    <div id="encoder" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#encoder" data-bs-slide-to="0"
+                                class="active"></button>
+                            <button type="button" data-bs-target="#encoder" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#encoder" data-bs-slide-to="2"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="video-container">
+                                    <img src="img/dswd.jpeg" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <p>Data Validation Process</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <img src="img/dswd_2.jpg" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <p>File Review and Organization</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="video-container">
+                                    <img src="img/dswd_3.jpg" class="d-block w-100 fixed-image">
+                                </div>
+                                <div class="carousel-caption">
+                                    <p>Data Entry in Progress</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#encoder"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#encoder"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container my-5">
+        <h2 class="text-center mb-4">Featured Projects</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white">
+                    <img src="img/odoo/dtr.png" class="card-img-top" alt="Project 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Odoo 14 Project:  DTR System</h5><br>
+                        <p class="card-text">Imported attendance data from a biometric system.</p>
+                        <p class="card-text">Automated attendance summarization and reporting.</p>
+                        <p class="card-text">Implemented a user-friendly form for managing leave requests.</p>
+                        <p class="card-text">Generated detailed attendance reports for payroll and analysis.</p>
+                        <a href="#" class="btn btn-outline-success">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white">
+                    <img src="project2.jpg" class="card-img-top" alt="Project 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Cribble: Search Engine</h5>
+                        <p class="card-text">Built an **automated inventory system** using **Odoo 14 & PostgreSQL**,
+                            reducing manual work by 60%.</p>
+                        <a href="#" class="btn btn-outline-success">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white">
+                    <img src="project3.jpg" class="card-img-top" alt="Project 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Future Comapany Website</h5>
+                        <p class="card-text">Integrated **Odoo e-commerce with Stripe & PayPal**, enhancing user
+                            experience and increasing sales.</p>
+                        <a href="#" class="btn btn-outline-success">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container my-5">
+        <h2 class="text-center mb-4">📩 Let's Connect</h2>
+
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Email</h4>
+                    <h5>haroldjamisola5@gmail.com</h5>
+                </div>
+                <div class="col-md-6">
+                    <a href="mailto:haroldjamisola5@gmail.com" class="btn btn-outline-light">📩 Send Email</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Phone</h4>
+                    <h5>+63 970 0457 676</h5>
+                </div>
+                <div class="col-md-6">
+                    <button onclick="navigator.clipboard.writeText('+639700457676')" class="btn btn-outline-light">📋 Copy Number</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>LinkedIn</h4>
+                    <h5>linkedin.com/in/haroldjamisola</h5>
+                </div>
+                <div class="col-md-6">
+                    <a href="https://www.linkedin.com/in/haroldjamisola" target="_blank"
+                        class="btn btn-outline-light">🔗 Visit Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>GitHub</h4>
+                    <h5>github.com/roldan45</h5>
+                </div>
+                <div class="col-md-6">
+                    <a href="https://github.com/roldan45" target="_blank" class="btn btn-outline-light">🔗 Visit Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contain-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Resume</h4>
+                    <h5>Download My Resume</h5>
+                </div>
+                <div class="col-md-6">
+                    <a href="files/Applicant - Harold_Jamisola.pdf" download class="btn btn-outline-light">📄 Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container about-page">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="contain-box">
+                    <img src="img/grad.jpg" alt="Graduation Picture" id="gradpic">
+                    <h1>Harold Delima Jamisola</h1>
+                    <h3><strong>Junior Python Developer | Odoo 14 Developer</strong></h3><br>
+                    <p>I am a Junior Python Developer with practical experience in software development. I recently
+                        graduated with a Bachelor of Science in Computer Science from AMA CLC - College of Sta. Maria in
+                        Bulacan, where I developed a strong foundation in web development.</p>
+                    <p>During my academic journey, I successfully completed a thesis project titled "Career Course
+                        Recommendation System for ACLC College of Sta. Maria," which demonstrated my ability to solve
+                        complex problems and apply web development principles.</p>
+                    <p>Before focusing on Python development, I gained practical experience as a Lathe Machine Operator
+                        and Electrical Diagram Layout specialist at JP Lozada Engineering, where I honed my technical
+                        skills and attention to detail.</p>
+                    <p>In my role as a Junior Python Developer, I have contributed to projects involving backend
+                        development, database management, and odoo application deployment. I've learned Python-based
+                        technologies and going to Odoo 14 development, including custom module development and system
+                        integration.</p>
+                    <p>I am known for my strong work ethic, dedication to delivering effective solutions, and ability to
+                        collaborate effectively in team environments. I am passionate about continuous learning and
+                        expanding my skills in Python and web development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+            let sections = document.querySelectorAll("section");
+            sections.forEach(section => section.style.display = "none");
+
+            let activeSection = document.getElementById(pageId);
+            if (activeSection) {
+                activeSection.style.display = "block";
+            }
+        }
+    </script>
+
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
